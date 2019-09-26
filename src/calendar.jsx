@@ -8,6 +8,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import CalendarContainer from "./calendar_container";
+import ChevronLeft from '@material-ui/icons/ChevronLeft'
+import styled from 'styled-components'
+
 import {
   newDate,
   setMonth,
@@ -379,15 +382,14 @@ export default class Calendar extends React.Component {
     }
 
     return (
-      <button
-        type="button"
-        className={classes.join(" ")}
-        onClick={clickHandler}
-      >
-        {this.props.showMonthYearPicker || this.props.showQuarterYearPicker
-          ? this.props.previousYearButtonLabel
-          : this.props.previousMonthButtonLabel}
-      </button>
+      <>
+        <button
+          type="button"
+          onClick={clickHandler}
+          className={classes.join(' ')}
+        >
+        </button>
+      </>
     );
   };
 
@@ -439,15 +441,15 @@ export default class Calendar extends React.Component {
     }
 
     return (
-      <button
-        type="button"
-        className={classes.join(" ")}
-        onClick={clickHandler}
-      >
-        {this.props.showMonthYearPicker || this.props.showQuarterYearPicker
-          ? this.props.nextYearButtonLabel
-          : this.props.nextMonthButtonLabel}
-      </button>
+      <>
+        <button
+          type="button"
+          onClick={clickHandler}
+          className={classes.join(' ')}
+        >
+          <ChevronLeft/>
+        </button>
+      </>
     );
   };
 
